@@ -1,0 +1,41 @@
+#! /bin/sh
+
+killall sxhkd
+sxhkd -c ~/.config/sxhkd/sxhkdrc &
+export CM_IGNORE_WINDOW="keepassxc"
+#clipmenud &
+
+# pgrep -x sxhkd > /dev/null || sxhkd &
+
+
+bspc monitor DP-4 -d I II III IV
+bspc monitor HDMI-0 -d V VI VII
+bspc monitor DP-3 -d VIII IX X
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+#AutoStart
+#picom -b --backend glx --xrender-sync-fence --blur-method none --vsync
+picom -b --experimental-backends --backend glx --blur-method none --animations --animation-for-open-window zoom --vsync & #compositor
+#picom  --backend glx --xrender-sync-fence --blur-method none --animations --animation-for-open-window zoom --vsync & #compositor
+kill -9 $(pgrep -f 'polybar') >/dev/null 2>&1
+polybar-msg cmd quit >/dev/null 2>&1
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+polybar -c ~/.config/polybar/config.ini &
+pipewire-pulse &
+feh --bg-fill ~/background.* #wallpaper
+xsetroot -cursor_name left_ptr &
+xset -dpms s off
+sleep 0.2
+sh ~/start-sound.sh
