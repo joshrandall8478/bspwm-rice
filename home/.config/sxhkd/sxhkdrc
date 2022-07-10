@@ -38,7 +38,7 @@ super + a
 
 #file manager
 super + e
-	nemo
+	dolphin
 
 #quicklinks
 super + q
@@ -64,7 +64,14 @@ XF86AudioPlay
 
 #volume up/down
 {XF86AudioRaiseVolume,XF86AudioLowerVolume}
-	pactl -- set-sink-volume 0 {+,-}5%
+	i3-volume -n -p {up,down} 5
+	#i3-volume -n -o "%iVolume [%v] \n %p"
+	#pactl -- set-sink-volume 0 {+,-}5%
+
+XF86AudioMute
+	i3-volume -n -p mute
+	#i3-volume -n -o "%iVolume [%v] \n %p"
+	#pactl -- set-sink-mute 0 toggle
 
 
 #

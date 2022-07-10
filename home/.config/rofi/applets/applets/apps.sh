@@ -51,12 +51,12 @@ case $chosen in
 		fi
         ;;
     $files)
-		if [[ -f /usr/bin/nemo ]]; then
+		if [[ -f /usr/bin/dolphin ]]; then
+			dolphin &
+	    	elif [[ -f /usr/bin/nemo ]]; then
 			nemo &
-	    	elif [[ -f /usr/bin/thunar ]]; then
+		elif [[ -f /usr/bin/thunar ]]; then
 			thunar &
-		elif [[ -f /usr/bin/pcmanfm ]]; then
-			pcmanfm &
 		else
 			msg "No suitable file manager found!"
 		fi

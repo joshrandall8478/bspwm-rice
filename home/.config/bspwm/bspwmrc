@@ -2,7 +2,11 @@
 
 killall sxhkd
 sxhkd -c ~/.config/sxhkd/sxhkdrc &
-export CM_IGNORE_WINDOW="keepassxc"
+killall notification-daemon
+killall dunst
+dunst -config ~/.config/dunst/dunstrc &
+
+#export CM_IGNORE_WINDOW="keepassxc"
 #clipmenud &
 
 # pgrep -x sxhkd > /dev/null || sxhkd &
@@ -35,7 +39,7 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar -c ~/.config/polybar/config.ini &
 pipewire-pulse &
 feh --bg-fill ~/background.* #wallpaper
-xsetroot -cursor_name left_ptr &
-xset -dpms s off
+#xsetroot -cursor_name left_ptr &
+#xset -dpms s off
 sleep 0.2
 sh ~/start-sound.sh

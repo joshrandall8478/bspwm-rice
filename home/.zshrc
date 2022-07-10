@@ -7,7 +7,7 @@ export PATH="$(python3 -m site --user-base)/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-   exec startx && bspwm -c ~/.config/bspwm/bspwmrc
+   startx
 fi
 
 # Set name of the theme to load --- if set to "random", it will
