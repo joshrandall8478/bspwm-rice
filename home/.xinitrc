@@ -56,9 +56,10 @@ xrdb ~/.Xresources
 xset -dpms s off
 xsetroot -cursor_name left_ptr
 
-dbus-launch bspwm -c ~/.config/bspwm/bspwmrc
-sleep 0.2
+pipewire-pulse &
 sh ~/start-sound.sh
+exec bspwm -c ~/.config/bspwm/bspwmrc
+
 
 #twm &
 #xclock -geometry 50x50-1+1 &
