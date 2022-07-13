@@ -57,8 +57,9 @@ xset -dpms s off
 xsetroot -cursor_name left_ptr
 
 pipewire-pulse &
-sh ~/start-sound.sh
+sh ~/start-sound.sh &
 exec bspwm -c ~/.config/bspwm/bspwmrc
+
 
 
 #twm &
