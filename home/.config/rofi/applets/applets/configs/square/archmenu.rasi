@@ -25,7 +25,7 @@ window {
     transparency:                   "real";
     border-radius:                  0px;
     location:                       southeast;
-	width:							400px;
+	width:							420px;
     x-offset:                       -15px;
     y-offset:                       -45px;
 }
@@ -42,7 +42,7 @@ prompt {
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							" Screenshot ";
+	str: 							"    Menu ";
 	background-color: 				@accent;
 	text-color: 					@background;
     padding:                        12px 10px 0px 10px;
@@ -63,7 +63,7 @@ inputbar {
 }
 
 listview {
-    columns:						4;
+    columns:						5;
     lines:							1;
     spacing:                        12px;
     cycle:                          true;

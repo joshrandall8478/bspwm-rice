@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 #neofetch | lolcat --seed=100
 #neofetch | lolcat -a --speed=700 --seed=70
 pfetch
-fortune -s | lolcat -p 5 -S 50
+fortune -s
 #fortune -s | glitchcat -a 100 -g 100 -s 10 -d 500 -f 600
 alias updategrub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 alias snapshot="sudo timeshift --create"
@@ -126,3 +126,5 @@ alias bspwm-reload="~/.config/bspwm/bspwmrc"
 alias start="~/start.sh"
 alias start-sddm="~/start-sddm.sh"
 alias take-my-data="kstart5 google-chrome-stable"
+alias set-output="pactl set-default-sink"
+alias set-input="pactl set-default-source"

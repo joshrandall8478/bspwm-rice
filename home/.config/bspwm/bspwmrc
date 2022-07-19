@@ -31,6 +31,9 @@ bspc rule -a mplayer2 state=floating
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
+xinput set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Accel Speed' 0.7 &
+xinput set-prop 'Logitech G502 HERO Gaming Mouse' 'libinput Accel Profile Enabled' 0 0 &
+
 #AutoStart
 #picom -b --backend glx --xrender-sync-fence --blur-method none --vsync
 picom -b --experimental-backends --backend glx --blur-method none --animations --animation-for-open-window zoom --vsync & #compositor
@@ -39,6 +42,10 @@ kill -9 $(pgrep -f 'polybar') >/dev/null 2>&1
 polybar-msg cmd quit >/dev/null 2>&1
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 polybar -c ~/.config/polybar/config.ini &
+testyakuake=`pgrep -u $UID -x yakuake` 
+if [ "$testyakuake" == "" ]; then
+	yakuake &
+fi
 #pipewire-pulse &
 feh --bg-fill ~/background.* #wallpaper
 #xsetroot -cursor_name left_ptr &

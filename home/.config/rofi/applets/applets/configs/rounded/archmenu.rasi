@@ -23,9 +23,9 @@ configuration {
 
 window {
     transparency:                   "real";
-    border-radius:                  0px;
+    border-radius:                  12px;
     location:                       southeast;
-	width:							400px;
+	width:							420px;
     x-offset:                       -15px;
     y-offset:                       -45px;
 }
@@ -35,22 +35,23 @@ prompt {
     padding:                        10px;
 	background-color: 				@background-light;
 	text-color: 					@accent;
-    border:                  		2px 2px 2px 2px;
-    border-radius:                  0px;
+    border:                  		0px 2px 0px 2px;
+    border-radius:                  10px;
     border-color:                  	@accent;
 }
 
 textbox-prompt-colon {
 	expand: 						false;
-	str: 							" Screenshot ";
+	str: 							" System ";
 	background-color: 				@accent;
 	text-color: 					@background;
-    padding:                        12px 10px 0px 10px;
+    padding:                        10px 10px 0px 10px;
+    border-radius:                  10px;
 }
 
 inputbar {
 	children: 						[ textbox-prompt-colon, prompt ];
-    spacing:                        0px;
+    spacing:                        12px;
     background-color:               @background;
     text-color:                     @foreground;
     expand:                         false;
@@ -63,7 +64,7 @@ inputbar {
 }
 
 listview {
-    columns:						4;
+    columns:						5;
     lines:							1;
     spacing:                        12px;
     cycle:                          true;
@@ -82,7 +83,7 @@ element {
     background-color:               @background-light;
     text-color:                     @foreground;
     orientation:                    vertical;
-    border-radius:                  0px;
+    border-radius:                  12px;
 }
 
 element-text {
@@ -99,7 +100,7 @@ element normal.urgent,
 element alternate.urgent {
     background-color:               @off;
     text-color:                     @background;
-    border-radius:                  0px;
+    border-radius:                  12px;
 }
 
 element normal.active,
@@ -109,11 +110,11 @@ element alternate.active {
 }
 
 element selected {
-    background-color:               @accent;
-    text-color:                     @background;
-    border:                  		0px;
-    border-radius:                  0px;
-    border-color:                  	@border;
+    background-color:               @background-light;
+    text-color:                     @accent;
+    border:                  		0px 2px 0px 2px;
+    border-radius:                  12px;
+    border-color:                  	@accent;
 }
 
 element selected.urgent {

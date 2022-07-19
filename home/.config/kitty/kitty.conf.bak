@@ -2170,6 +2170,6 @@ include ./theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Idle Toes
+# 1984 Orwellian
 include current-theme.conf
 # END_KITTY_THEME

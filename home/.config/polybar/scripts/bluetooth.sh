@@ -7,5 +7,7 @@ else
    then	
     	echo " On"
    fi
-  echo "%{F#2193ff}%{F-} Connected"
+  echo "%{F#FCDE64}%{F-} Connected"
+  device=`bluetoothctl info | grep Alias: | sed 's/Alias://g'`
+  #notify-send --icon=~/.config/polybar/scripts/.bluetooth.png "Bluetooth Device Connected" "$device" -u normal
 fi
