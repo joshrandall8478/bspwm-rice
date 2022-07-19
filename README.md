@@ -1,5 +1,10 @@
 # joshrandall's bspwm-rice
-This rice is mainly coded for Arch, but can be used by any distrobution with slight tweaking. Please refer to this guide when it comes to installation and configuration
+This rice is mainly coded for Arch, but can be used by any distrobution with slight tweaking. Please refer to this guide when it comes to installation and configuration.
+
+## Clone git repository
+```
+git clone https://github.com/joshrandall8478/bspwm-rice
+```
 
 # Information
 - Operating System: Arch Linux
