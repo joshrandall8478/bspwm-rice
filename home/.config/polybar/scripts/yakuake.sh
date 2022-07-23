@@ -2,7 +2,7 @@
 testyakuake=`pgrep -u $UID -x yakuake`
 
 if [ "$testyakuake" == "" ]; then
-	echo "%{F#66ffffff}"
+	echo "%{F#ff8000}%{F-} Yakuake Closed"
 else
-	echo "%{F#2193ff}"
+	echo ""
 fi
