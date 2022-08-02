@@ -16,10 +16,10 @@ msg() {
 }
 
 # Browser
-if [[ -f /usr/bin/google-chrome-stable ]]; then
-	app="google-chrome-stable"
-elif [[ -f /usr/bin/firefox ]]; then
+if [[ -f /usr/bin/firefox ]]; then
 	app="firefox"
+elif [[ -f /usr/bin/google-chrome-stable ]]; then
+	app="google-chrome-stable"
 elif [[ -f /usr/bin/chromium ]]; then
 	app="chromium"
 elif [[ -f /usr/bin/midori ]]; then
@@ -45,7 +45,7 @@ plex=""
 # Variable passed to rofi
 options="$google\n$youtube\n$reddit\n$twitter\n$netflix\n$soundcloud"
 
-chosen="$(echo -e "$options" | $rofi_command -p "Open In  :  $app" -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p "Open In:  $app" -dmenu -selected-row 0)"
 case $chosen in
     $google)
         $app https://www.google.com &

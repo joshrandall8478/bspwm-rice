@@ -21,10 +21,19 @@ area=""
 window=""
 all=""
 
+if [[ -f /usr/bin/spectacle ]]; then
+	engine="spectacle" 
+elif [[ -f /usr/bin/scrot ]]; then
+	engine="scrot"
+else
+	engine=" "
+fi
+
+
 # Variable passed to rofi
 options="$screen\n$area\n$window\n$all"
 
-chosen="$(echo -e "$options" | $rofi_command -p 'spectacle' -dmenu -selected-row 0)"
+chosen="$(echo -e "$options" | $rofi_command -p $engine -dmenu -selected-row 0)"
 case $chosen in
     $screen)
 		if [[ -f /usr/bin/spectacle ]]; then

@@ -14,7 +14,7 @@ rofi_command="rofi -theme $dir/apps.rasi"
 terminal=""
 files=""
 editor=""
-browser=""
+browser=""
 music=""
 settings=""
 discord=""
@@ -75,11 +75,11 @@ case $chosen in
 		fi
         ;;
     $browser)
-		if [[ -f /usr/bin/google-chrome-stable ]]; then
-			google-chrome-stable &
-	  	elif [[ -f /usr/bin/firefox ]]; then
+		if [[ -f /usr/bin/firefox ]]; then
 			firefox &
-		elif [[ -f /usr/bin/chromium ]]; then
+    		elif [[ -f /usr/bin/google-chrome-stable ]]; then
+			google-chrome-stable &
+	  	elif [[ -f /usr/bin/chromium ]]; then
 			chromium &
 		elif [[ -f /usr/bin/midori ]]; then
 			midori &
